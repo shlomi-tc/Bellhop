@@ -242,7 +242,7 @@
 			{
 				// If connect is called after the window is ready
 				// we can go ahead and send the connect message
-				if (window.document.readyState === "complete")
+				if (window.document.readyState === "complete" || window.document.readyState === "loading")
 				{
 					target.postMessage('connected', this.origin);
 				}

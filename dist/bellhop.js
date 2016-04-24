@@ -4,7 +4,6 @@
 	/**
 	 * Generic event dispatcher
 	 * @class  BellhopEventDispatcher
-	 * @namespace springroll
 	 */
 	var BellhopEventDispatcher = function()
 	{
@@ -113,7 +112,6 @@
 	/**
 	 *  Trigger any event handlers for an event type
 	 *  @method trigger
-	 *  @private
 	 *  @param {Object} event The event to send
 	 */
 	p.trigger = function(event)
@@ -391,7 +389,7 @@
 			{
 				// If connect is called after the window is ready
 				// we can go ahead and send the connect message
-				if (window.document.readyState === "complete")
+				if (window.document.readyState === "complete" || window.document.readyState === "loading")
 				{
 					target.postMessage('connected', this.origin);
 				}
